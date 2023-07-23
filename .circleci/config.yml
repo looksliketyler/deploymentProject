@@ -54,6 +54,11 @@ jobs:
           node-version: '14.15' 
       - eb/setup
       - aws-cli/setup
+      - run:
+        name: Install EB CLI
+        command: |
+          apt-get update
+          apt-get install -y awsebcli
       - checkout
       - run:
           name: Deploy App
